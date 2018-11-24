@@ -1,0 +1,13 @@
+default menu.c32
+timeout 30
+########################################################################
+label ^kickstart
+menu label ^Centos 7 scripted installation
+kernel images/centos/vmlinuz
+append initrd=images/centos/initrd.img ks=http://192.168.88.243/ks.cfg
+#######################################################################
+label install
+	menu label ^Install Ubuntu
+	menu default
+	kernel images/ubuntu/netboot/linux
+        append vga=788 initrd=images/ubuntu/netboot/initrd.gz --- quiet 
